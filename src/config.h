@@ -20,7 +20,7 @@
 #define TFT_SCLK  18   // SPI clock line
 
 
-// ------------------------------------------------------------
+// -------------------  -----------------------------------------
 // AUDIO (MAX98357A I2S amplifier)
 // I2S is a digital audio protocol — no analog signal involved.
 // SD_MODE on the MAX98357A is tied to 3V3 to keep amp enabled.
