@@ -1,38 +1,18 @@
-#include <Adafruit_NeoPixel.h>
-
-#define DATA_PIN   27     // IO27 per current wiring
-#define NUM_PIXELS 1
-
-Adafruit_NeoPixel pixels(NUM_PIXELS, DATA_PIN, NEO_GRB + NEO_KHZ800);
+#include <TFT_eSPI.h>
+TFT_eSPI tft;
 
 void setup() {
-  Serial.begin(115200);
-  pixels.begin();
-  pixels.setBrightness(50); // keep low during bring-up
-  pixels.clear();
-  pixels.show();
+  tft.init();
+  tft.setRotation(1);
+  tft.fillScreen(TFT_BLACK);
+  tft.setTextColor(TFT_WHITE, TFT_BLACK);
+  tft.setTextSize(2);
+  tft.drawString("DDR!", 10, 10);
+  tft.fillRect(10, 50, 40, 40, TFT_RED);
+  tft.fillRect(60, 50, 40, 40, TFT_GREEN);
+  tft.fillRect(110, 50, 40, 40, TFT_BLUE);
 }
 
 void loop() {
-  // Cycle R -> G -> B -> off so you can visually confirm
-  // channel mapping and rule out a DIN/DOUT mix-up.
-  pixels.setPixelColor(0, pixels.Color(255, 0, 0));
-  pixels.show();
-  Serial.println("RED");
-  delay(500);
-
-  pixels.setPixelColor(0, pixels.Color(0, 255, 0));
-  pixels.show();
-  Serial.println("GREEN");
-  delay(500);
-
-  pixels.setPixelColor(0, pixels.Color(0, 0, 255));
-  pixels.show();
-  Serial.println("BLUE");
-  delay(500);
-
-  pixels.clear();
-  pixels.show();
-  Serial.println("OFF");
-  delay(500);
+  // empty for now — TFT test only runs once in setup()
 }
