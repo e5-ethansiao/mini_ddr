@@ -30,21 +30,29 @@
 #define I2S_DOUT  22   // Data out from ESP32 to amplifier
 
 
-// ------------------------------------------------------------
-// NEOPIXELS (WS2812B x4)
-// One NeoPixel per directional pad — UP, DOWN, LEFT, RIGHT.
-// Data signal is chained: ESP32 → LED1 → LED2 → LED3 → LED4
-// 330Ω resistor on data line protects against voltage spikes.
-// ------------------------------------------------------------
-#define NEO_PIN   27   // Data pin to first NeoPixel in chain
-#define NEO_COUNT 4    // Total number of NeoPixels
+// // ------------------------------------------------------------
+// // NEOPIXELS (WS2812B x4)
+// // One NeoPixel per directional pad — UP, DOWN, LEFT, RIGHT.
+// // Data signal is chained: ESP32 → LED1 → LED2 → LED3 → LED4
+// // 330Ω resistor on data line protects against voltage spikes.
+// // ------------------------------------------------------------
+// #define NEO_PIN   27   // Data pin to first NeoPixel in chain
+// #define NEO_COUNT 4    // Total number of NeoPixels
 
-// NeoPixel index per direction — maps direction to LED position
-#define NEO_UP    0
-#define NEO_DOWN  1
-#define NEO_LEFT  2
-#define NEO_RIGHT 3
+// // NeoPixel index per direction — maps direction to LED position
+// #define NEO_UP    0
+// #define NEO_DOWN  1
+// #define NEO_LEFT  2
+// #define NEO_RIGHT 3
 
+// Replaced above Neopixel with LED !!!
+// One LED per direction pad (Preferably different colours) - UP, DOWN, LEFT, RIGHT.
+// 330 Ohm resistor between GPIO and LED positive leg
+// // ------------------------------------------------------------
+#define LED_UP 27  //  Data pin for UP 
+#define LED_LEFT 14 // Data pin for LEFT
+#define LED_DOWN 13 // Data pin for DOWN
+#define LED_RIGHT 4 // Data pin for RIGHT
 
 // ------------------------------------------------------------
 // FSR INPUTS (FSR400 force sensitive resistors)
@@ -109,12 +117,12 @@
 // WS2812B uses GRB colour order, not RGB.
 // Format: 0xGGRRBB
 // ------------------------------------------------------------
-#define NEO_COLOUR_UP     0xFF0000   // Red   — UP pad
-#define NEO_COLOUR_DOWN   0x00FF00   // Green — DOWN pad
-#define NEO_COLOUR_LEFT   0x0000FF   // Blue  — LEFT pad
-#define NEO_COLOUR_RIGHT  0xFFFF00   // Yellow — RIGHT pad
-#define NEO_COLOUR_MISS   0xFF0000   // Red flash on miss
-#define NEO_COLOUR_OFF    0x000000   // Off
+// #define NEO_COLOUR_UP     0xFF0000   // Red   — UP pad
+// #define NEO_COLOUR_DOWN   0x00FF00   // Green — DOWN pad
+// #define NEO_COLOUR_LEFT   0x0000FF   // Blue  — LEFT pad
+// #define NEO_COLOUR_RIGHT  0xFFFF00   // Yellow — RIGHT pad
+// #define NEO_COLOUR_MISS   0xFF0000   // Red flash on miss
+// #define NEO_COLOUR_OFF    0x000000   // Off
 
 
 // ------------------------------------------------------------
